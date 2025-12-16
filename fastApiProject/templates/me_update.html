@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Upravit profil</title>
+</head>
+<body>
+    <h1>Upravit profil</h1>
+    <form action="/users/me/update" method="post">
+        <label for="name">Jméno:</label>
+        <input type="text" id="name" name="name" value="{{ user.name }}" required>
+        <button type="submit">Uložit</button>
+        <a href="/users/me/profile">Zpět</a>
+    </form>
+</body>
+</html>

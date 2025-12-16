@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <title>Registrace</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2em; }
+        form { max-width: 400px; margin: auto; }
+        label { display: block; margin-top: 1em; }
+        input[type="text"], input[type="password"] {
+            width: 100%; padding: 0.5em; margin-top: 0.2em;
+        }
+        button { margin-top: 1.5em; padding: 0.7em 2em; }
+    </style>
+</head>
+<body>
+    <h2>Registrace uživatele</h2>
+    <form method="post" action="/users/register">
+        <label for="login">Uživatelské jméno</label>
+        <input type="text" id="login" name="login" required minlength="3">
+
+        <label for="name">Jméno</label>
+        <input type="text" id="name" name="name" required minlength="3">
+
+        <label for="password">Heslo</label>
+        <input type="password" id="password" name="password" required minlength="6">
+
+        <button type="submit">Registrovat</button>
+    </form>
+</body>
+</html>

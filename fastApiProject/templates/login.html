@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <title>Přihlášení</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2em; }
+        form { max-width: 400px; margin: auto; }
+        label { display: block; margin-top: 1em; }
+        input[type="text"], input[type="password"] {
+            width: 100%; padding: 0.5em; margin-top: 0.2em;
+        }
+        button { margin-top: 1.5em; padding: 0.7em 2em; }
+        .error { color: red; margin-top: 1em; }
+    </style>
+</head>
+<body>
+    <h2>Přihlášení uživatele</h2>
+    <form method="post" action="/users/login">
+        <label for="login">Uživatelské jméno</label>
+        <input type="text" id="login" name="login" required minlength="3">
+
+        <label for="password">Heslo</label>
+        <input type="password" id="password" name="password" required minlength="6">
+
+        <button type="submit">Přihlásit se</button>
+    </form>
+    {% if error %}
+        <div class="error">{{ error }}</div>
+    {% endif %}
+</body>
+</html>

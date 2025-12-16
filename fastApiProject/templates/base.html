@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Aplikace{% endblock %}</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    {% include 'header.html' %}
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    {% include 'footer.html' %}
+</body>
+</html>

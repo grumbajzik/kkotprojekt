@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}Můj profil{% endblock %}
+
+{% block content %}
+<h1>Můj profil</h1>
+<p><b>Login:</b> {{ user.login }}</p>
+<p><b>Jméno:</b> {{ user.name }}</p>
+
+<form action="/users/me/update" method="get" style="display:inline;">
+    <button type="submit">Upravit</button>
+</form>
+<form action="/users/me/change-password" method="get" style="display:inline;">
+    <button type="submit">Změnit heslo</button>
+</form>
+<button onclick="confirmDelete()">Smazat účet</button>
+<form id="deleteForm" action="/users/me/delete" method="post" style="display:none;"></form>
+
+<script>
+    function confirmDelete() {
+        if (confirm("Opravdu chcete smazat svůj účet? Tato akce je nevratná.")) {
+            document.getElementById('deleteForm').submit();
+        }
+    }
+</script>
+{% endblock %}
